@@ -1,0 +1,3 @@
+# Prevent test photo uploads
+origpics/*
+stickpics/*
