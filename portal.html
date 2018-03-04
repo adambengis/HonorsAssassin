@@ -1,0 +1,43 @@
+<div id=portal class="panelcontent">
+	<div id="assassin-portal" class="box-option content-box portal-box" onclick="boxClick.call(this, event)">
+		<div class="box-title">Assassin Portal</div>
+		<img src="opt-a.png" class="box-image"/>
+		<div class="box-content">
+			<div class="box-desc">
+				Request stick verification, view player stats, and more!
+			</div>
+		</div> 
+	</div>
+	<div id="mod-portal" class="box-option content-box portal-box" onclick="boxClick.call(this, event)">
+		<div class="box-title">Moderator Portal</div>
+		<img src="opt-m.png" class="box-image"/>
+		<div class="box-content">
+			<div class="box-desc">
+				***CLASSIFIED***
+			</div>
+		</div> 
+	</div>
+	<script type="text/javascript">
+		function boxClick(event)
+		{
+			var alogin = document.getElementById('assassin-login');
+			var mlogin = document.getElementById('mod-login');
+			fade(portal, -1);
+			setTimeout(function(box){
+				remove(portal);
+				if(box.id == "assassin-portal")
+				{
+					alogin.style.position = "inherit";
+					fade(alogin, 1);
+					remove(mlogin);
+				}
+				else if(box.id == "mod-portal")
+				{
+					mlogin.style.position = "inherit";
+					fade(mlogin, 1);
+					remove(alogin);
+				}
+			}, 500, this);
+		}
+	</script>
+</div>
